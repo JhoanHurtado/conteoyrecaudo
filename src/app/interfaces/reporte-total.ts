@@ -1,5 +1,5 @@
-export interface Comentario{
+export interface ReporteTotal{
   TotalFCant: number;
-  TotalFValor: decimal;
+  TotalFValor: number;
 
 }

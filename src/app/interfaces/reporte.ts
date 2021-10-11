@@ -1,8 +1,8 @@
-export interface Comentario{
-  id?: number;
-  titulo: string;
-  creador: string;
-  texto: string;
-  fechaCreacion: Date;
+import { ReporteGeneral } from "./reporte-general";
+import { ReporteTotal } from "./reporte-total";
+
+export interface Reporte{
+  reportGeneralGroupBies: ReporteGeneral[];
+  reportTotals: ReporteTotal[];
 
 }

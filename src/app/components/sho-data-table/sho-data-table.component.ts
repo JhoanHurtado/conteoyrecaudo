@@ -10,6 +10,9 @@ import { RecaudoService } from "src/app/services/recaudo.service";
 export class ShoDataTableComponent implements OnInit {
 
   listReport: Recaudo[] = [];
+  limit: number = 10;
+  skip: number = 0;
+
   constructor(private _recaudoService: RecaudoService) { }
 
   ngOnInit(): void {
@@ -17,13 +20,23 @@ export class ShoDataTableComponent implements OnInit {
   }
 
   getRecaudo(){
-    this._recaudoService.getListRecaudos(0,30).subscribe((data: any) => {
-      console.log(data);      
+    this._recaudoService.getListRecaudos(this.skip*10,this.limit).subscribe((data: any) => {
       this.listReport = data;
     },(err: any)=>{
-      console.log(err);      
+      console.log(err);
     });
-    
+  }
+
+
+  paginateNext(){
+    this.skip=this.skip+1;
+    this.getRecaudo();
+  }
+  paginateBack(){
+    if(this.skip != 0){
+      this.skip=this.skip-1;
+      this.getRecaudo();
+    }
   }
 
 }

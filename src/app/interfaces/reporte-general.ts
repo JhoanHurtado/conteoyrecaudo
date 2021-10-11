@@ -1,7 +1,9 @@
+import { ListaRecaudoData } from "./ListaRecaudoData";
+
 export interface ReporteGeneral{
   Estacion: string;
-  TotalCant: number;
-  TotalValor: decimal;
-  Fecha: Date;
+  DataProperties: ListaRecaudoData[];
 
 }
+
+
