@@ -25,7 +25,6 @@ export class HomeComponent implements OnInit {
   loadData() {
       // dateS: this.loadDataForm.get('date')?.value
 console.log(this.loadDataForm.get('date')?.value);
-
       this._recaudoService.loadData(this.loadDataForm.get('date')?.value).subscribe(data => {
         this.router.navigate(['/']);
       }, error => {

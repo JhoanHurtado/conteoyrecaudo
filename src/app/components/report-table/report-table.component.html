@@ -11,13 +11,18 @@
     <tbody>
       <tr *ngFor='let reporte of report.reportGeneralGroupBies; index as i;'>
 
-        <td *ngIf='reporte.DataProperties.length >i ' >{{reporte.DataProperties[i].Fecha | date:'yyyy-MM-dd'}} - {{i}}</td>
+        <td *ngIf='reporte.DataProperties.length >i ' >{{reporte.DataProperties[i].Fecha | date:'yyyy-MM-dd'}}</td>
         <td *ngIf='reporte.DataProperties.length >=i && i==0 ' >Cantidad: {{report.reportGeneralGroupBies[i].DataProperties[i].TotalCant}} - Valor: {{report.reportGeneralGroupBies[i].DataProperties[i].TotalValor}}</td>
         <td *ngIf='reporte.DataProperties.length >=i &&  i == 1 ' >Cantidad: {{report.reportGeneralGroupBies[i-1].DataProperties[i].TotalCant}} - Valor: {{report.reportGeneralGroupBies[i].DataProperties[i].TotalValor}}</td>
-        <td *ngIf='reporte.DataProperties.length >=i && i==0 ' >Cantidad: {{report.reportGeneralGroupBies[i+1].DataProperties[i].TotalCant}} - Valor: {{report.reportGeneralGroupBies[i+1].DataProperties[i].TotalValor}}  - {{i}}</td>
-        <td *ngIf='reporte.DataProperties.length >=i && i==1 ' >Cantidad: {{report.reportGeneralGroupBies[i].DataProperties[i].TotalCant}} - Valor: {{report.reportGeneralGroupBies[i+1].DataProperties[i].TotalValor}}  - {{i}}</td>
-        <td *ngIf='reporte.DataProperties.length >=i && i==0 ' >Cantidad: {{report.reportGeneralGroupBies[i+2].DataProperties[i].TotalCant}} - Valor: {{report.reportGeneralGroupBies[i+2].DataProperties[i].TotalValor}} - {{i}}</td>
-        <td *ngIf='reporte.DataProperties.length >=i && i==1 ' >Cantidad: {{report.reportGeneralGroupBies[i+1].DataProperties[i].TotalCant}} - Valor: {{report.reportGeneralGroupBies[i+1].DataProperties[i].TotalValor}} - {{i}}</td>
+        <td *ngIf='reporte.DataProperties.length >=i && i==0 ' >Cantidad: {{report.reportGeneralGroupBies[i+1].DataProperties[i].TotalCant}} - Valor: {{report.reportGeneralGroupBies[i+1].DataProperties[i].TotalValor}}</td>
+        <td *ngIf='reporte.DataProperties.length >=i && i==1 ' >Cantidad: {{report.reportGeneralGroupBies[i].DataProperties[i].TotalCant}} - Valor: {{report.reportGeneralGroupBies[i+1].DataProperties[i].TotalValor}}</td>
+        <td *ngIf='reporte.DataProperties.length >=i && i==0 ' >Cantidad: {{report.reportGeneralGroupBies[i+2].DataProperties[i].TotalCant}} - Valor: {{report.reportGeneralGroupBies[i+2].DataProperties[i].TotalValor}}</td>
+        <td *ngIf='reporte.DataProperties.length >=i && i==1 ' >Cantidad: {{report.reportGeneralGroupBies[i+1].DataProperties[i].TotalCant}} - Valor: {{report.reportGeneralGroupBies[i+1].DataProperties[i].TotalValor}}</td>
+
+        <td *ngIf='reporte.DataProperties.length >=i && i==2 ' >Cantidad: {{report.reportGeneralGroupBies[i-2].DataProperties[i].TotalCant}} - Valor: {{report.reportGeneralGroupBies[i].DataProperties[i].TotalValor}}</td>
+        <td *ngIf='reporte.DataProperties.length >=i && i==2 ' >Cantidad: {{report.reportGeneralGroupBies[i-1].DataProperties[i].TotalCant}} - Valor: {{report.reportGeneralGroupBies[i-1].DataProperties[i].TotalValor}}</td>
+        <td *ngIf='reporte.DataProperties.length >=i && i==2 ' >Cantidad: {{report.reportGeneralGroupBies[i].DataProperties[i].TotalCant}} - Valor: {{report.reportGeneralGroupBies[i].DataProperties[i].TotalValor}}</td>
+
       </tr>
       <tr><td>TOTAL</td><td *ngFor='let reporteT of report.reportTotals'>{{reporteT.TotalFCant}} - {{reporteT.TotalFValor}}</td></tr>
     </tbody>

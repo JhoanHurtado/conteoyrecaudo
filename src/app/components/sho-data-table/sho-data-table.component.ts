@@ -13,6 +13,8 @@ export class ShoDataTableComponent implements OnInit {
   limit: number = 10;
   skip: number = 0;
 
+  filterRecaudo  = '';
+
   constructor(private _recaudoService: RecaudoService) { }
 
   ngOnInit(): void {
