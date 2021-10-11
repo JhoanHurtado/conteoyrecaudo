@@ -1,0 +1,22 @@
+<table *ngIf='listReport.length > 0' class="table table-hover mt-3">
+    <thead>
+      <tr>
+        <th >Estacion</th>
+        <th>Sentido</th>
+        <th>Hora</th>
+        <th>Categoria</th>
+        <th>ValorTabulado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let reporte of listReport'>
+        <td>{{reporte.Estacion}}</td>
+        <td>{{reporte.Sentido}}</td>
+        <td>{{reporte.Hora}}</td>
+        <td>{{reporte.Categoria}}</td>
+        <td>{{reporte.ValorTabulado}}</td>
+      </tr>
+    </tbody>
+  </table>
+ 
+  
